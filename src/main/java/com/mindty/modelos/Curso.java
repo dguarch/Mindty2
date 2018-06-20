@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -38,7 +39,8 @@ public class Curso {
     )
 	private Usuario formador;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OrderColumn(name="idu")
     @JoinTable(
         name = "curso_alumno", 
         joinColumns = { @JoinColumn(name = "idCurso") }, 
@@ -49,7 +51,7 @@ public class Curso {
 	@Column
 	private int horasCurso;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
         name = "curso_modulo", 
         joinColumns = { @JoinColumn(name = "idCurso") }, 
