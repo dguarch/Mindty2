@@ -1,7 +1,5 @@
-    <footer class="row">
-        <div class="col-12 col-md-12 ">
-            <p>DiseÃ±ado por OVERFLOW
-                <br>&copy 2018</p>
+    <footer>
+        <div class="overflow">
+            <p>Diseñado por OVERFLOW &copy 2018</p>
         </div>
-
     </footer>

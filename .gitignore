@@ -1,3 +1,4 @@
+
 # Created by https://www.gitignore.io/api/eclipse
 
 ### Eclipse ###
@@ -64,3 +65,4 @@ local.properties
 
 
 # End of https://www.gitignore.io/api/eclipse
+/target/

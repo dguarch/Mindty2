@@ -20,8 +20,5 @@
         <mapping class="com.mindty.modelos.Modulo"/>
     	<mapping class="com.mindty.modelos.Unidad"/>
     	<mapping class="com.mindty.modelos.Nota"/>
-    	
-    	
     </session-factory>
-
 </hibernate-configuration>

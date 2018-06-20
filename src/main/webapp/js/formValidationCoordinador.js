@@ -25,7 +25,7 @@ let validar = () => {
 
     $('#profes').each(function () {
         if (this.value == 0) {
-            $('#profes').after('<div class="errors"><i class="far fa-times-circle"></i> No has seleccionado a ningún formador.</div>');
+            $('#profes').after('<div class="errors"><i class="far fa-times-circle"></i> Selecciona un formador.</div>');
             _valid = false;
         }
         _formValues[this.id] = this.value;
@@ -51,7 +51,7 @@ let validar = () => {
 
     return { valid: _valid, values: _formValues };
 }
-//MOKI
+// MOKI
 const enviarCurso = (dataSend) => {
 	let cursodata=$('#formCurso').serialize();
 	
@@ -64,8 +64,7 @@ const enviarCurso = (dataSend) => {
         .done(function (dataSend) {
             // Cuando hay exito
             if (dataSend) {
-                $('#mensajes').html(`<div class="alert alert-success col-6" role="alert">
-            Los datos se han envíado correctamente!!!!!!
+                $('#mensajes').html(`<div class="alert alert-success col-6" role="alert">  Los datos se han envíado correctamente!!!!!!
           </div>`);
             } else {
                 $('#mensajes').html(`<div class="alert alert-danger" role="alert">
@@ -103,33 +102,34 @@ $('#modulosButton').click(function (evnt) {
 		} else if (this.value > 10){
 			this.value = 10;
 		}
+		let numeroModulo = 1;
+		let numeroUnidad = 1;
 		for (let i = 0; i < this.value; i++) {
-			$('#modulosadd').after(`<!-- Fila Código + Nombre Curso --><div class="form-row">
-					<div class="form-group col-4">
-						<!-- Campo Código módulo con RegExp = ^[A-Z]{3}\s+[0-9]{5}$ (XXX 12345)$ -->
-						
-						<input type="text" class="form-control"
-							pattern="^[A-Z]{3}\s+[0-9]{5}$" id="codigoModulo"
-							placeholder="Código" aria-label="Código modulo"
-							name="codigoModulo" required> <small id="cheet"
-							class="text-info">Ej. XXX 12345</small>
+			$('#modulosadd').after(`
+				<div id="modulosarea">
+					<div class="modulo">
+					<!-- Campo Código curso con RegExp = ^[A-Z]{3}\s+[0-9]{5}$ (XXX 12345)$ -->
+					<input type="text" class="form-control" pattern="^[A-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$" id="nombreModulo" placeholder="Nombre módulo" aria-label="Nombre módulo" name="modul${numeroModulo}" required value="Modulo ${numeroModulo} Nuevo">
 					</div>
-					<div class="col-8">
-						<!-- ExpReg= 1a letra mayuscula, solo letras -->
-						<input type="text" class="form-control"
-							pattern="^[A-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$" id="NombreModulo"
-							placeholder="Nombre módulo" aria-label="Nombre módulo"
-							name="nombreModulo" required>
+					<div class="row">
+						<div class="col-1"></div>
+							<div class="col-11 unidades">
+								<!-- Campo Código curso con RegExp = ^[A-Z]{3}\s+[0-9]{5}$ (XXX 12345)$ -->
+								<input type="text" class="form-control" pattern="^[A-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$" id="nombreUnidad" placeholder="Nombre unidad" aria-label="Nombre unidad" name="m${numeroModulo}u${numeroUnidad}" required value="Unidad ${numeroUnidad} - Modulo ${numeroModulo} Nuevo">
+							</div>
+						</div>
+					<div class="row">
+						<div class="col-1"></div>
+							<div class="col-11 unidades">
+								<!-- Campo Código curso con RegExp = ^[A-Z]{3}\s+[0-9]{5}$ (XXX 12345)$ -->
+								<input type="text" class="form-control" pattern="^[A-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$" id="nombreUnidad" placeholder="Nombre unidad" aria-label="Nombre unidad" name="m${numeroModulo}u${numeroUnidad+1}" required value="Unidad ${numeroUnidad+1} - Modulo ${numeroModulo} Nuevo">
+							</div>
+						</div>
+					</div>
 					</div>
 				</div>
-				<div class="form-row" id="modulosadd">
-				<div class="form-group col-5">
-					<label for="modulos">Nº unidades del módulo</label> 
-					<input type="number" class="form-control" id="modulos" placeholder="1" min="1" max="10"	name="modulos">
-				</div>
-				<button id="modulosButton" type="button"
-					class="btn btn btn-secondary">Añadir unidades</button>
-			</div>`);
+				`);
+			numeroModulo++;
 			console.log(this.value);
 		}
         });

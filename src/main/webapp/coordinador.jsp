@@ -49,7 +49,6 @@
 
 	<!-- Formulario entrada curso -->
 	<section>
-		<div id="mensajes" class="row justify-content-center"></div>
 		<form id="formCurso" action="" method="POST">
 			<!-- Fila Código + Nombre Curso -->
 			<div class="form-row">
@@ -57,16 +56,16 @@
 					<!-- Campo Código curso con RegExp = ^[A-Z]{3}\s+[0-9]{5}$ (XXX 12345)$ -->
 					<input type="text" class="form-control"
 						pattern="^[A-Z]{3}\s+[0-9]{5}$" id="codigoCurso"
-						placeholder="Código" aria-label="Código curso"
-						name="codigoCurso" required> <small id="cheet"
-						class="text-info">Ej. XXX 12345</small>
+						placeholder="Código" aria-label="Código curso" name="codigoCurso"
+						required value="ASD 12345"> <small id="cheet" class="text-info">Ej.
+						XXX 12345</small>
 				</div>
 				<div class="col-8">
 					<!-- ExpReg= 1a letra mayuscula, solo letras -->
 					<input type="text" class="form-control"
 						pattern="^[A-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$" id="nombreCurso"
 						placeholder="Nombre curso" aria-label="Nombre curso"
-						name="nombreCurso" required>
+						name="nombreCurso" required value="Curso demo">
 				</div>
 			</div>
 
@@ -77,98 +76,98 @@
 						aria-label="Selecciona al formador" name="profes">
 						<option value="0" disabled selected>Formador</option>
 						<c:forEach var="unProfe" items="${profes}" varStatus="counter">
-							<option value="${unProfe.id}">${unProfe.nombre}</option>
+							<option value="${unProfe.idu}">${unProfe.nombreUsuario}</option>
 						</c:forEach>
 					</select>
 				</div>
 				<div class="col-4">
-					 <input type="number" class="form-control" id="horas" placeholder="20" min="20"	max="200" name="horas">
-					 <label for="horas">Nº horas</label>
+					<input type="number" class="form-control" id="horas"
+						placeholder="20" min="20" max="200" name="horas" value="120"> <label
+						for="horas">Nº horas</label>
 				</div>
 			</div>
 
 			<!-- Número módulos -->
 			<div class="form-row" id="modulosadd">
 				<div class="form-group col-5">
-					<label for="modulos">Nº módulos del curso</label> 
-					<input type="number" class="form-control" id="modulos" placeholder="1" min="1" max="10"	name="modulos">
+					<label for="modulos">Nº módulos del curso</label> <input
+						type="number" class="form-control" id="modulos" placeholder="1"
+						min="1" max="10" name="modulos" value="2">
 				</div>
-				<button id="modulosButton" type="button"
-					class="btn btn-primary">Añadir módulos</button>
+				<button id="modulosButton" type="button" class="btn btn-info">Añadir
+					módulos</button>
 			</div>
-			
-			<!-- Disquete -->
+
+			<!-- Listado de alumnos -->
+			<div id="alumnos">
+				<div class="row">
+					<div class="col-3 btnBadge">
+						<button id="btonAlumnos" type="button" class="btn btn-primary">
+							Alumnos <span class="badge badge-light">4</span>
+						</button>
+					</div>
+					<div class="col-5"></div>
+					<div class="col-4">
+						<button type="button" id="add" class="btn btn-success derecha"
+							aria-label="AÃ±adir alumno">
+							<i class="fas fa-plus"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6">
+						<img class="rounded-circle img-thumbnail"
+							src="./images/users/usr1.jpg" alt="Usuario 1">
+						<p>
+							<i class="fas fa-user"></i> Julia Ivanov <br> <i
+								class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
+							<br> <i class="fas fa-phone flip-horizontal"></i> <a
+								href="tel:#">685 12 75 54</a>
+						</p>
+					</div>
+					<div class="col-6">
+						<img class="rounded-circle img-thumbnail"
+							src="./images/users/usr1.jpg" alt="Usuario 2">
+						<p>
+							<i class="fas fa-user"></i> Julia Ivanov <br> <i
+								class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
+							<br> <i class="fas fa-phone flip-horizontal"></i> <a
+								href="tel:#">685 12 75 54</a>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<img class="rounded-circle img-thumbnail"
+							src="./images/users/usr1.jpg" alt="Usuario 3">
+						<p>
+							<i class="fas fa-user"></i> Julia Ivanov <br> <i
+								class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
+							<br> <i class="fas fa-phone flip-horizontal"></i> <a
+								href="tel:#">685 12 75 54</a>
+						</p>
+					</div>
+					<div class="col-6">
+						<img class="rounded-circle img-thumbnail"
+							src="./images/users/usr1.jpg" alt="Usuario 4">
+						<p>
+							<i class="fas fa-user"></i> Julia Ivanov <br> <i
+								class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
+							<br> <i class="fas fa-phone flip-horizontal"></i> <a
+								href="tel:#">685 12 75 54</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Guardar -->
 			<!-- <div class="col-2 container d-flex h-100 justify-content-center align-self-center"> -->
-			<div class="col-2 text-center">
-				<button id="enviar" class="botons" aria-label="Guardar">
-					<i class="fas fa-save fa-3x align-middle"></i>
-				</button>
-			</div>
+			<div>
+				<button id="enviar" class="btn btn-primary btn-lg btn-block" aria-label="Guardar">Guardar</button>
 			</div>
 		</form>
-	</section>
-
-	<!-- Listado de alumnos -->
-	<section id="alumnos">
-		<div class="row">
-			<div class="col-3 btnBadge">
-				<button id="btonAlumnos" type="button" class="btn btn-primary">
-					Alumnos <span class="badge badge-light">4</span>
-				</button>
-			</div>
-			<div class="col-5"></div>
-			<div class="col-4">
-				<button type="button" id="add" class="btn btn-success derecha"
-					aria-label="AÃ±adir alumno">
-					<i class="fas fa-plus"></i>
-				</button>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-6">
-				<img class="rounded-circle img-thumbnail"
-					src="./images/users/usr1.jpg" alt="Usuario 1">
-				<p>
-					<i class="fas fa-user"></i> Julia Ivanov <br> <i
-						class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
-					<br> <i class="fas fa-phone flip-horizontal"></i> <a
-						href="tel:#">685 12 75 54</a>
-				</p>
-			</div>
-			<div class="col-6">
-				<img class="rounded-circle img-thumbnail"
-					src="./images/users/usr1.jpg" alt="Usuario 2">
-				<p>
-					<i class="fas fa-user"></i> Julia Ivanov <br> <i
-						class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
-					<br> <i class="fas fa-phone flip-horizontal"></i> <a
-						href="tel:#">685 12 75 54</a>
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-6">
-				<img class="rounded-circle img-thumbnail"
-					src="./images/users/usr1.jpg" alt="Usuario 3">
-				<p>
-					<i class="fas fa-user"></i> Julia Ivanov <br> <i
-						class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
-					<br> <i class="fas fa-phone flip-horizontal"></i> <a
-						href="tel:#">685 12 75 54</a>
-				</p>
-			</div>
-			<div class="col-6">
-				<img class="rounded-circle img-thumbnail"
-					src="./images/users/usr1.jpg" alt="Usuario 4">
-				<p>
-					<i class="fas fa-user"></i> Julia Ivanov <br> <i
-						class="fas fa-envelope"></i> <a href="mailto:#">julia@ivanov.ru</a>
-					<br> <i class="fas fa-phone flip-horizontal"></i> <a
-						href="tel:#">685 12 75 54</a>
-				</p>
-			</div>
-		</div>
+		<div id="mensajes" class="row justify-content-center"></div>
 	</section>
 
 	<!-- Copy right -->
@@ -198,6 +197,8 @@
 
 <!-- Mindty JS -->
 <!-- <script src="./js/formValidation.js"></script> -->
-<script src="./js/formValidationCoordinador.js" charset="UTF-8">></script>
+<script src="./js/formValidationCoordinador.js" charset="UTF-8">
+	>
+</script>
 
 </html>

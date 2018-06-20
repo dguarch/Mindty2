@@ -28,70 +28,38 @@ public class DemoDataEM extends EntityManager {
 	
 	public boolean updateDemoData() {
 		boolean isOK = false;
-			
-		/* Creamos las unidades*/
-		Unidad unidad1 = new Unidad();
-		unidad1.setNombreUnidad("UNIDAD 1 - TEST 1");
-		Unidad unidad2 = new Unidad();
-		unidad2.setNombreUnidad("UNIDAD 2 - TEST 2");
-		Unidad unidad3 = new Unidad();
-		unidad3.setNombreUnidad("UNIDAD 3 - TEST 3");
-		Unidad unidad4 = new Unidad();
-		unidad4.setNombreUnidad("UNIDAD 4 - TEST 4");
-		
-		Unidad unidad5 = new Unidad();
-		unidad5.setNombreUnidad("UNIDAD 11 - TEST 11");
-		Unidad unidad6 = new Unidad();
-		unidad6.setNombreUnidad("UNIDAD 12 - TEST 12");
-		Unidad unidad7 = new Unidad();
-		unidad7.setNombreUnidad("UNIDAD 13 - TEST 13");
-		Unidad unidad8 = new Unidad();
-		unidad8.setNombreUnidad("UNIDAD 14 - TEST 14");
-		
-		Unidad unidad9 = new Unidad();
-		unidad9.setNombreUnidad("UNIDAD 21 - TEST 21");
-		Unidad unidad10 = new Unidad();
-		unidad10.setNombreUnidad("UNIDAD 22 - TEST 22");
-		Unidad unidad11 = new Unidad();
-		unidad11.setNombreUnidad("UNIDAD 23 - TEST 23");
-		Unidad unidad12 = new Unidad();
-		unidad12.setNombreUnidad("UNIDAD 24 - TEST 24");
 
-		
 		/* Creamos las lista de Unidades*/
 		List<Unidad> unidadesModulo1= new ArrayList<Unidad>();
-		unidadesModulo1.add(unidad1);
-		unidadesModulo1.add(unidad2);
-		unidadesModulo1.add(unidad3);
-		unidadesModulo1.add(unidad4);
+		unidadesModulo1.add(new Unidad("UNIDAD 1 - MODULO 1 - CURSO 1")); 
+		unidadesModulo1.add(new Unidad("UNIDAD 2 - MODULO 1 - CURSO 1"));
+		unidadesModulo1.add(new Unidad("UNIDAD 3 - MODULO 1 - CURSO 1"));
+		unidadesModulo1.add(new Unidad("UNIDAD 4 - MODULO 1 - CURSO 1"));
 		
 		List<Unidad> unidadesModulo2= new ArrayList<Unidad>();
-		unidadesModulo2.add(unidad5);
-		unidadesModulo2.add(unidad6);
-		unidadesModulo2.add(unidad7);
-		unidadesModulo2.add(unidad8);
+		unidadesModulo2.add(new Unidad("UNIDAD 1 - MODULO 2 - CURSO 1"));
+		unidadesModulo2.add(new Unidad("UNIDAD 2 - MODULO 2 - CURSO 1"));
+		unidadesModulo2.add(new Unidad("UNIDAD 3 - MODULO 2 - CURSO 1"));
+		unidadesModulo2.add(new Unidad("UNIDAD 4 - MODULO 2 - CURSO 1"));
 		
 		List<Unidad> unidadesModulo3= new ArrayList<Unidad>();
-		unidadesModulo3.add(unidad9);
-		unidadesModulo3.add(unidad10);
-		unidadesModulo3.add(unidad11);
-		unidadesModulo3.add(unidad12);
+		unidadesModulo3.add(new Unidad("UNIDAD 1 - MODULO 1 - CURSO 2"));
+		unidadesModulo3.add(new Unidad("UNIDAD 2 - MODULO 1 - CURSO 2"));
+		unidadesModulo3.add(new Unidad("UNIDAD 3 - MODULO 1 - CURSO 2"));
+		unidadesModulo3.add(new Unidad("UNIDAD 4 - MODULO 1 - CURSO 2"));
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		/* Creamos los modulos */
 		Modulo modulo1 = new Modulo();
-		modulo1.setCodigoMondulo("123 ABC");
 		modulo1.setNombreModulo("Modulo 1 - TEST CURSO 1");
 		modulo1.setUnidad(unidadesModulo1);
 		
 		Modulo modulo2 = new Modulo();
-		modulo2.setCodigoMondulo("456 SFE");
 		modulo2.setNombreModulo("Modulo 2 - TEST CURSO 1");
 		modulo2.setUnidad(unidadesModulo2);
 		
 		Modulo modulo3 = new Modulo();
-		modulo3.setCodigoMondulo("789 RTF");
 		modulo3.setNombreModulo("Modulo 1 - TEST CURSO 2");
 		modulo3.setUnidad(unidadesModulo3);
 		

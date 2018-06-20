@@ -17,65 +17,49 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="modulo")
+@Table(name = "modulo")
 public class Modulo {
-	
+
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idm;
-	
-	@Column(unique = true)
-	private String codigoMondulo;
-	
+
 	@Column
 	private String nombreModulo;
-	
+
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-        name = "modulo_unidad", 
-        joinColumns = { @JoinColumn(name = "idModulo") }, 
-        inverseJoinColumns = { @JoinColumn(name = "idUnidad") }
-    )
+	@JoinTable(name = "modulo_unidad", joinColumns = { @JoinColumn(name = "idModulo") }, inverseJoinColumns = {
+			@JoinColumn(name = "idUnidad") })
 	private List<Unidad> unidad;
-	
+
 	@OneToOne(mappedBy = "modulo")
 	private Nota nota;
 
-	
-	/* Constructores de Modulo */
-	
 	public Modulo() {
+		super();
 	}
 	
-	public Modulo(String codigoMondulo, String nombreModulo, List<Unidad> unidad) {
-		this.codigoMondulo = codigoMondulo;
+	public Modulo(String nombreModulo, List<Unidad> unidad) {
+		super();
+		this.idm = idm;
+		this.nombreModulo = nombreModulo;
+		this.unidad = unidad;
+		this.nota = nota;
+	}
+
+	public Modulo(int idm, String nombreModulo, List<Unidad> unidad) {
+		super();
+		this.idm = idm;
 		this.nombreModulo = nombreModulo;
 		this.unidad = unidad;
 	}
 
-	public Modulo(int idm, String codigoMondulo, String nombreModulo) {
-		this.idm = idm;
-		this.codigoMondulo = codigoMondulo;
-		this.nombreModulo = nombreModulo;
-	}
-
-	
-	/* Geters & Seters de Modulo */
-	
 	public int getIdm() {
 		return idm;
 	}
 
 	public void setIdm(int idm) {
 		this.idm = idm;
-	}
-
-	public String getCodigoMondulo() {
-		return codigoMondulo;
-	}
-
-	public void setCodigoMondulo(String codigoMondulo) {
-		this.codigoMondulo = codigoMondulo;
 	}
 
 	public String getNombreModulo() {
@@ -92,5 +76,16 @@ public class Modulo {
 
 	public void setUnidad(List<Unidad> unidad) {
 		this.unidad = unidad;
-	}	
+	}
+
+	public Nota getNota() {
+		return nota;
+	}
+
+	public void setNota(Nota nota) {
+		this.nota = nota;
+	}
+	
+	
+
 }

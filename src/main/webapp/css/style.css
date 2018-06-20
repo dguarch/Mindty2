@@ -180,4 +180,25 @@ form>div{
     height: 70px;
 }
 
-.overflow{font-family: 'Dancing Script', cursive; font-size: 2em;}
+.overflow{font-family: 'Dancing Script', cursive; font-size: 1.2em}
+
+.modulo{
+	margin-bottom: 5px;
+}
+
+#modulosarea{
+	height: 100%; !important;
+	padding: 5px;
+}
+
+#alumnos{
+	height: 350px;
+}
+
+.sendnew{
+	width: 100px;
+}
+
+.unidades{
+	padding: 5px;
+}
