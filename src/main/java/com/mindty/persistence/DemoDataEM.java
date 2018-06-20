@@ -75,21 +75,21 @@ public class DemoDataEM extends EntityManager {
 		
 		/* Creación de los Alumnos */
 		Alumno alumno1 = new Alumno();
-		alumno1.setNombreUsuario("Nombre 1");
+		alumno1.setNombreUsuario("Alumno");
 		alumno1.setPassword("Password");
 		alumno1.setEmail("email1@email.com");
 		alumno1.setTelefono("93-555-75-54");
 		alumno1.setTipo(3);
 		
 		Alumno alumno2 = new Alumno();
-		alumno2.setNombreUsuario("Nombre 2");
+		alumno2.setNombreUsuario("Alumno");
 		alumno2.setPassword("Password");
 		alumno2.setEmail("email2@email.com");
 		alumno2.setTelefono("93-555-75-54");
 		alumno2.setTipo(3);
 		
 		Alumno alumno3 = new Alumno();
-		alumno3.setNombreUsuario("Nombre 3");
+		alumno3.setNombreUsuario("Alumno");
 		alumno3.setPassword("Password");
 		alumno3.setEmail("email3@email.com");
 		alumno3.setTelefono("93-555-75-54");
@@ -97,14 +97,14 @@ public class DemoDataEM extends EntityManager {
 		
 		/* Creación de los Profesores */
 		Usuario profe1 = new Usuario();
-		profe1.setNombreUsuario("Nombre 4");
+		profe1.setNombreUsuario("Profe");
 		profe1.setPassword("Password");
 		profe1.setEmail("email4@email.com");
 		profe1.setTelefono("93-555-75-55");
 		profe1.setTipo(2);
 		
 		Usuario profe2 = new Usuario();
-		profe2.setNombreUsuario("Nombre 5");
+		profe2.setNombreUsuario("Profe");
 		profe2.setPassword("Password");
 		profe2.setEmail("email5@email.com");
 		profe2.setTelefono("93-555-75-55");
@@ -112,7 +112,7 @@ public class DemoDataEM extends EntityManager {
 		
 		/* Creación del Coordinador */
 		Usuario coordi1 = new Usuario();
-		coordi1.setNombreUsuario("Nombre 6");
+		coordi1.setNombreUsuario("Coord");
 		coordi1.setPassword("Password");
 		coordi1.setEmail("email6@email.com");
 		coordi1.setTelefono("93-555-75-56");
